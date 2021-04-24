@@ -47,6 +47,7 @@ export function PlantSelect() {
         plant.environments.includes(enviroment)
     );
 
+    setFilteredPlants(filtered);
   }
 
   async function fetchPlant() {
@@ -132,9 +133,7 @@ export function PlantSelect() {
           showsVerticalScrollIndicator={false}
           numColumns={2}
           onEndReachedThreshold={0.1}
-          onEndReached={({ distanceFromEnd }) => 
-            handleFetchMore(distanceFromEnd)
-          }
+          onEndReached={({ distanceFromEnd }) => handleFetchMore(distanceFromEnd)}
           ListFooterComponent={
             loadingMore ? <ActivityIndicator color={colors.green} /> : <></>
           }
@@ -170,7 +169,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingBottom: 5,
     marginLeft: 32,
-    marginVertical: 32
+    marginVertical: 32,
+    paddingRight: 32
   },
   plants: {
     flex: 1,

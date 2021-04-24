@@ -18,7 +18,6 @@ export function PlantCardPrimary({ data, ...rest }: PlantProps) {
     <RectButton
       style={styles.container}
       {...rest}
-      key={data.id}
     >
       <SvgFromUri uri={data.photo} width={70} height={70} />
       <Text style={styles.text}>
